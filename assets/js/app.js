@@ -1,3 +1,4 @@
+//Funcion para el menu:
 document.getElementById("toggle").addEventListener("click", function(event){
   event.preventDefault();
   document.getElementById("nav-header").classList.toggle("open");
@@ -23,3 +24,49 @@ window.addEventListener("scroll", function(){
    }
    lastScrollTop = currentScroll;
 }, false);
+
+//Funcion para crear el grid:
+var nombre = ['Fiorella Quispe','Lourdes Vilchez','Leydi Maldonado','Yessenia Huamán',
+                  'Miriam Mendoza', 'Elizabeth Condori', 'Arantza Burga', 'Grecia Rayme',
+                  'Janine Vega', 'Rosario Félix', 'Daguiana Revolledo', 'Jenny Velasquez',
+                  'Nadia Cuadros', 'Michelle More', 'Marilu Llamoca', 'Mariel García',
+                  'Fiorella Cisneros', 'Geraldine Chauca', 'Yelitza Choque',
+                  'Stephanie Hiyagon', 'Rocio Tapia', 'Dana Franco', 'Flor Retamozo',
+                  'Nathaly Pacheco', 'Erika Vidal', 'Katherine Ortega', 'Brilly Majuan',
+                  'Flor de Cantuta', 'Leslie Avendaño', 'Cindy Mendoza', 'Annia Flores',
+                  'Betsi Loayza', 'Ayda Sulca', 'Milagros Gutierrez', 'Nakarid Jave',
+                  'Angie Condor', 'Maricarmen Rojas', 'Ariana Cabana', 'Flor Tello',
+                  'Mitchell Rodríguez', 'Naomi Villanueva', 'Mary Castillo', 'Miriam Peralta',
+                  'Karin Alejo', 'Liliana Peña', 'Ruth Salvador', 'Marilu Llamoca', 'Wendy Reyes',
+                  'Cinthya Quispe','Maria Grecia Cutipa', 'Ana Durand', 'Glisse Jorge', 'Neiza Nuñez',
+                  'Sandra Solorzano'];
+
+var grid = document.getElementById('grid');
+var ruta = "assets/images/students/"; //ruta principal de las fotos.
+var codersLima = new Array(); //Array de objetos coders.
+
+function añadirCoder(){
+	var fragContainer = document.createDocumentFragment();
+		for (var i = 0; i < nombre.length; i++) { //Agregará celdas al grid segun cantidad de nombres.
+
+			var rutaX = ruta + (i+1) + ".png";
+			codersLima.push({nombre: nombre[i], foto: rutaX});
+
+			var divContainer = document.createElement("div");
+			divContainer.classList.add("container-student");
+			var photo = document.createElement("img");
+			var mask = document.createElement("div");
+			mask.classList.add("mask");
+			var text = document.createElement("div");
+			text.classList.add("text");
+			text.innerHTML = codersLima[i].nombre;
+
+			photo.setAttribute("src", codersLima[i].foto);
+			divContainer.appendChild(photo);
+			divContainer.appendChild(mask);
+			divContainer.appendChild(text);
+			fragContainer.appendChild(divContainer);
+			}
+	grid.appendChild(fragContainer);
+}
+añadirCoder();

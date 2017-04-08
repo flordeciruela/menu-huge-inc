@@ -1,7 +1,7 @@
 * {
 margin: 0;
 padding: 0;
-font-family: Helvetica sans-serif;
+font-family: 'Raleway', sans-serif;
 }
 
 /*Direct style for nav tag*/
@@ -175,9 +175,66 @@ nav.solid #logo .logo {
 }
 /*Grid*/
 section{
-margin-top: 80px;
+margin-top: 100px;
+text-align: center;
 }
 
+.container-student {
+display: inline-block;
+position: relative;
+width: 150px;
+height: 150px;
+overflow: hidden;
+}
+
+.container-student img {
+/*-o-transition: all 500ms ease-in-out;la imagen hara zoon dentro del div*/
+}
+
+#grid img {
+display: block;
+width: 150px;
+height: 150px;
+}
+
+.mask {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 150px;
+height: 150px;
+opacity: 0;
+transition: 0.05s ease;
+background-color: #f7b617;
+visibility: hidden;
+}
+
+.container-student:hover .mask {
+opacity: 0.7;
+visibility: visible;
+}
+
+.container-student:hover img {
+transform: scale(1.1);/*zoom a la imagen*/
+}
+
+.container-student:hover .text {
+visibility: visible;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+visibility: hidden;
+}
+/*
 img {
 width: 150px;
 height: 150px;
@@ -186,25 +243,5 @@ transition: all 0.2s linear;
 position: relative;
 }
 
-student-content{
-overflow: hidden;
-position: relative;
-}
-
-.student-content, span, .mask {
-display: inline-block;
-position: absolute;
-overflow: hidden;
-}
-
 .student-content:hover img {
-transform: scale(1.1);/*Damos un ligero zoom a la imagen*/
-}
-
-.student-content:hover .mask {
-width: 150px;
-height: 150px;
-background-color: #f7b617;
-opacity: 1;
-position: absolute;
-}
+transform: scale(1.1);Damos un ligero zoom a la imagen*/
