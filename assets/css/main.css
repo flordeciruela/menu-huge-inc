@@ -189,6 +189,15 @@ nav.solid #logo .logo {
 /*type*/
 
 /*Grid*/
+h1{
+margin: 20px;
+color:  #2e2d2d;
+}
+
+h1 span {
+color: #f7b617;
+}
+
 section{
 margin-top: 100px;
 text-align: center;
@@ -249,21 +258,11 @@ transform: translate(-50%, -50%);
 -webkit-transform: translate(-50%, -50%);
 visibility: hidden;
 }
-/*
-img {
-width: 150px;
-height: 150px;
-float: left;
-transition: all 0.2s linear;
-position: relative;
-}
 
-.student-content:hover img {
-transform: scale(1.1);Damos un ligero zoom a la imagen*/
 footer {
 text-align: center;
 padding-top: 20px;
-padding-bottom: 10px;
+padding-bottom: 15px;
 background: #2e2d2d;
 color: white;
 margin-top: 20px;
